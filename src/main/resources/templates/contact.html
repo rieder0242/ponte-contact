@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Contacts .:. Ponte Contact by riean</title>
+        <link href="css/a.css" th:href="@{/css/a.css}" rel="stylesheet" />
+        <script src="js/doT.min.js" th:src="@{/js/doT.min.js}"></script>
+        <script src="js/url.js" th:src="@{/js/url.js}"></script>
+        <script src="js/helper.js" th:src="@{/js/helper.js}"></script>
+        <script src="js/ListControl.js" th:src="@{/js/ListControl.js}"></script>
+        <script src="js/filed.js" th:src="@{/js/filed.js}"></script>
+        <script src="js/validators.js" th:src="@{/js/validators.js}"></script>
+        <script src="js/FormControl.js" th:src="@{/js/FormControl.js}"></script>
+        <script src="js/start.js" th:src="@{/js/start.js}"></script>
+        <meta name="_csrf" th:name="_csrf" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header" th:name="_csrf_header" th:content="${_csrf.headerName}"/>
+    </head>
+    <body>
+        <nav>
+            <button id="add">add contact</button>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="logout"/>
+            </form>
+        </nav> 
+        <main>
+            <h2>Contact List</h2>
+            <form th:action="@{/login}">
+                <label><span>Filter</span><input type="text" id="search"/></label>
+            </form>
+            <section>
+                <div class="placeholder w13"></div>
+                <div class="placeholder w11"></div>
+                <div class="placeholder w24"></div>
+                <div class="placeholder w15"></div>
+                <div class="placeholder w19"></div>
+                <div class="placeholder w12"></div>
+            </section>
+        </main> 		
+        <script type="text/x-dot-template" id="dot-edit-form">
+            <form th:action="@{/logout}" id="form">
+                <div class="quit">x</div>
+                <h2>Edit Contact</h2>
+                <div class="col wide"></div>
+                <div class="cols">
+                        <div class="col">
+                                <div class="placeholder w13"></div>
+                                <div class="placeholder w11"></div>
+                                <div class="placeholder w24"></div>
+                                <div class="placeholder w15"></div>
+                        </div>
+                        <div class="col">
+                        </div>
+                </div>
+                <div class="line left">
+                    <button id="delete" class="red">delete</button>
+                    <input type="submit" value="save" id="save"/>
+                </div>
+            </form>
+        </script>
+        <script type="text/x-dot-template" id="dot-notify">
+			<span class="message {{!it.class}}">{{!it.msg}}</span>
+        </script>
+        <script type="text/x-dot-template" id="dot-address">
+			<div class="address">
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+        </script>
+        <script type="text/x-dot-template" id="dot-input">
+			<label class="{{!it.clazz}}"><span>{{!it.name}}</span><input type="{{!it.type}}" placeholder="{{!it.placeholder}}"/><span class="error"></span></label>
+        </script>
+        <script type="text/x-dot-template" id="dot-message">
+			<div class="message-box {{!it.clazz}}"><div class="text">{{!it.text}}</div><div class="buttons"></div></div>
+        </script>
+        <script type="text/x-dot-template" id="dot-message-button">
+            <button class="{{!it.clazz}}">{{!it.text}}</button>
+        </script>
+        <script type="text/x-dot-template" id="dot-line">
+            {{~ it.content :contact}}
+            <div data-id="{{!contact.id}}" class="line">{{!contact.name}}</div>
+            {{~}}
+        </script>
+    </body>
+</html>

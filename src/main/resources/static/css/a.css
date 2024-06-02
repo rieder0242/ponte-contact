@@ -1,0 +1,389 @@
+:root {
+    --border-color: #ccc;
+    --border-focused-color: #648fbf;
+    --button-color: #2d89ef;
+}
+@font-face{
+    font-family:roboto;
+    font-style:normal;
+    font-weight:400;
+    src:local('Roboto'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Regular.woff) format('woff')
+}
+@font-face{
+    font-family:roboto;
+    font-style:italic;
+    font-weight:400;
+    src:local('Roboto'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Italic.woff) format('woff')
+}
+@font-face{
+    font-family:roboto;
+    font-style:normal;
+    font-weight:700;
+    src:local('Roboto'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Bold.woff) format('woff')
+}
+@font-face{
+    font-family:roboto;
+    font-style:italic;
+    font-weight:700;
+    src:local('Roboto'),url(https://fonts.cdnfonts.com/s/12165/Roboto-BoldItalic.woff) format('woff')
+}
+@font-face{
+    font-family:roboto thin;
+    font-style:normal;
+    font-weight:250;
+    src:local('Roboto Thin'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Thin.woff) format('woff')
+}
+@font-face{
+    font-family:roboto thin;
+    font-style:italic;
+    font-weight:250;
+    src:local('Roboto Thin'),url(https://fonts.cdnfonts.com/s/12165/Roboto-ThinItalic.woff) format('woff')
+}
+@font-face{
+    font-family:roboto light;
+    font-style:normal;
+    font-weight:300;
+    src:local('Roboto Light'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Light.woff) format('woff')
+}
+@font-face{
+    font-family:roboto light;
+    font-style:italic;
+    font-weight:300;
+    src:local('Roboto Light'),url(https://fonts.cdnfonts.com/s/12165/Roboto-LightItalic.woff) format('woff')
+}
+@font-face{
+    font-family:roboto medium;
+    font-style:normal;
+    font-weight:500;
+    src:local('Roboto Medium'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Medium.woff) format('woff')
+}
+@font-face{
+    font-family:roboto medium;
+    font-style:italic;
+    font-weight:500;
+    src:local('Roboto Medium'),url(https://fonts.cdnfonts.com/s/12165/Roboto-MediumItalic.woff) format('woff')
+}
+@font-face{
+    font-family:roboto black;
+    font-style:normal;
+    font-weight:900;
+    src:local('Roboto Black'),url(https://fonts.cdnfonts.com/s/12165/Roboto-Black.woff) format('woff')
+}
+@font-face{
+    font-family:roboto black;
+    font-style:italic;
+    font-weight:900;
+    src:local('Roboto Black'),url(https://fonts.cdnfonts.com/s/12165/Roboto-BlackItalic.woff) format('woff')
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    overflow-y: scroll;
+}
+.centrale{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+h2{
+    font-size: 1.5rem;
+    width: 33.3ch;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50ch;
+    max-width: 95ch;
+    margin: 0 auto;
+    gap: .3em;
+    border: 1px solid var(--border-color);
+    border-radius: .3em;
+    padding: .3em;
+}
+form h2 {
+    margin: .3rem 0;
+
+}
+form label {
+    border: 1px solid var(--border-color);
+    border-radius: .3em;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: baseline;
+    overflow: hidden;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+form label:focus-within {
+    border-color: var(--border-focused-color);
+}
+form label span {
+    padding: .3em;
+}
+form label input {
+    border: none;
+    padding: .3em;
+    flex-grow: 1;
+    font-size: 1rem;
+}
+form label input:focus {
+    outline: none;
+}
+form label input:focus {
+    background-color: #eff4ff;
+}
+
+form .error{
+    background-color: #f9c0c0;
+    padding: .3em;
+    color: #600000;
+}
+form > .error{
+    border: 1px solid #c60000;
+    border-radius: .3em;
+}
+button, input[type=submit] {
+    align-self: end;
+    background-color: var(--button-color);
+    padding: .3em;
+    border-radius: .3em;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+button:hover ,input[type=submit]:hover {
+    background-color: #53a2f9;
+}
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: .6em;
+}
+
+nav form {
+    width: auto;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+nav button {
+    border-radius:0 0 .3em .3em;
+}
+nav form input[type="submit"]{
+    border-radius:0 0 0 .3em;
+}
+
+main {
+    max-width: 95ch;
+    margin:0 auto;
+}
+
+
+.placeholder{
+    margin: 0.5ch 0;
+    height: 2ch;
+    background: linear-gradient(270deg, #ccc, #ccc, #aaa, #ccc, #ccc);
+    background-size: 30ch;
+    animation: AnimationName 5s linear infinite;
+}
+
+@keyframes AnimationName {
+    0%{
+        background-position:0 0
+    }
+    100%{
+        background-position:30ch 0
+    }
+}
+.placeholder.w11 {
+    width: 11ch;
+    animation-delay: -2s;
+}
+.placeholder.w12 {
+    width: 12ch
+}
+.placeholder.w13 {
+    width: 13ch;
+    animation-delay: -2.6s;
+}
+.placeholder.w15 {
+    width: 15ch;
+}
+.placeholder.w19 {
+    width: 19ch;
+    animation-delay: -4s;
+}
+.placeholder.w24 {
+    width: 24ch;
+    animation-delay: -1s;
+}
+section {
+    display: flex;
+    width: 50ch;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: start;
+}
+section .line {
+    display: inline;
+    padding: .1em;
+    border-radius: .3em;
+    margin: 0;
+    cursor: pointer;
+}
+section .line:hover {
+    background-color: #d8eaff;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00000030;
+    display: flex;
+    align-items: center;
+}
+
+.modal form{
+    width: 70ch;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    max-height: 100vh;
+    overflow: auto;
+}
+.modal form * {
+    flex-shrink: 0;
+}
+.cols {
+    display: flex;
+    gap: .3em;
+}
+.col {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+form label .error{
+    width: 100%;
+    display: none;
+}
+form label.hasError .error{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.message {
+    position: fixed;
+    border: 1px solid black;
+    bottom: 1em;
+    right: 1em;
+    padding: .3em;
+    border-radius: .3em;
+    background: white;
+    animation-name: messageShow;
+    animation-duration: 1s;
+}
+@keyframes messageShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.message.out {
+    animation-name: messageHide;
+    animation-duration: 1s;
+    opacity: 0;
+}
+@keyframes messageHide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.message.error{
+    background-color: #f9c0c0;
+    color: #600000;
+    border-color: #600000;
+}
+.col.wide {
+    margin: .3em 0;
+}
+.address{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    margin: .6em 0;
+}
+.col.wide .line{
+    display: flex;
+    gap: .3em;
+}
+.col.wide .line label{
+    flex-grow: 1;
+}
+.col.wide .line .zipcode {
+    flex-grow: 0;
+}
+.zipcode input {
+    width: 4ch;
+}
+.settlement input {
+    width: 20ch;
+}
+
+.col.wide .line .houseNumber {
+    flex-grow: 0;
+}
+.houseNumber input {
+    width: 15ch;
+}
+.quit {
+    position: absolute;
+    width: 1.3em;
+    border: 1px solid;
+    text-align: center;
+    height: 1.3em;
+    background-color: white;
+    margin: 0 0 0 67.5ch;
+    border-radius: .3em;
+}
+.quit:hover {
+    background-color: #eaeaea;
+}
+.message-box  {
+  width: 50ch;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: .3em;
+  border-radius: .3em;
+  background-color: white;
+}
+.line.left{
+    justify-content: end;
+    display: flex;
+    gap: .3em;
+}
+.message-box .buttons {
+  display: flex;
+  justify-content: right;
+  gap: .6ch;
+}
